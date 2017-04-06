@@ -39,7 +39,7 @@ function Slider(containerId){
     this.rootElement.classList.remove('active');
   }
   this.setSceneImage = function(targetImage){
-    if ((timeStamp+3) > UnixTimeStamp() || ( scene.firstElementChild && targetImage.src == scene.firstElementChild.src || targetImage.localName != 'img')) return;
+    if ((timeStamp+301) > UnixTimeStamp() || ( scene.firstElementChild && targetImage.src == scene.firstElementChild.src || targetImage.localName != 'img')) return;
     timeStamp = UnixTimeStamp();
     currentImage = targetImage;
     Array.from(imageContainer.children).forEach(function(item){
@@ -57,10 +57,10 @@ function Slider(containerId){
     scene.appendChild(image);
   }
   this.nextSceneImage = function(e){
-    this.setSceneImage(currentImage.nextElementSibling);
+    this.setSceneImage(currentImage.nextElementSibling || currentImage.parentElement.firstElementChild);
   }
   this.prevSceneImage = function(e){
-    this.setSceneImage(currentImage.previousElementSibling);
+    this.setSceneImage(currentImage.previousElementSibling || currentImage.parentElement.lastElementChild);
   }
 
   // Creating eventcontrollers

@@ -5,4 +5,4 @@ function createExtendedElement(name, options = false){
       element[key] = options[key];
   return element
 }
-function UnixTimeStamp(){return Math.round(new Date().getTime() / 100)};
+function UnixTimeStamp(){return Math.round(new Date().getTime())};

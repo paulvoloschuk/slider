@@ -3,6 +3,7 @@ body{
   background-size: 100vmax 100vmax;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 @font-face {
   font-family: "Flaticon";
@@ -42,6 +43,7 @@ h1{
   justify-content: center;
 }
 .inner-container{
+  position: absolute;
   background: #111111;
   border-top: 1px solid rgba(255, 255, 255, .07);
   border-bottom: 1px solid rgba(255, 255, 255, .07);
@@ -61,7 +63,7 @@ h1{
   perspective: 800px;
   perspective-origin: 0% 50%;
   img{
-    transition: all .3s ease-in-out
+    transition: all .3s ease-in-out;
     transform: translateX(-50%);
     opacity: 0;
     margin: 0 auto;
@@ -108,7 +110,6 @@ h1{
 }
 .active{
   .inner-container{
-    position: absolute;
     height:100vh;
     top: 0;
   }
